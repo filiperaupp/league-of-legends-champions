@@ -8,12 +8,6 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
 
-// const instance = axios.create({
-//   headers: {
-//     "X-Riot-Token": "RGAPI-62075ff8-184c-44ad-8bfd-816b57c0ed79"
-//   }
-// })
-
 // adicionar filtro
 // mostrar detalhes em um overlay
 // Página com detalhamento completo do campeão (skills, stats, etc)
