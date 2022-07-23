@@ -1,8 +1,11 @@
 .header {
+    height: 70px;
+    background-color: #111;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    padding: 16px;
 }
 
 .header img {
-    height: 100px;
+    height: 40px;
 }

@@ -1,0 +1,10 @@
+.section-divider h2 {
+    color: #C28F2C;
+    font-weight: bold;
+}
+
+.section-divider hr {
+    border: 2px solid #C28F2C;
+    background: #C28F2C;
+    opacity: 1;
+}

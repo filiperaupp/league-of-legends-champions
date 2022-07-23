@@ -1,31 +1,50 @@
 import axios from "axios";
 import "../styles/Champion.css";
-import "../styles/Header.css";
 import { useEffect, useState } from "react";
-import { Button } from 'react-bootstrap';
+import { Button } from "react-bootstrap";
+import { IChampion } from "../interfaces/IChampion";
+import Champion from "../components/Champion";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import Header from "../components/Header";
+import { Link } from "react-router-dom";
+
+// const instance = axios.create({
+//   headers: {
+//     "X-Riot-Token": "RGAPI-62075ff8-184c-44ad-8bfd-816b57c0ed79"
+//   }
+// })
 
 // adicionar filtro
 // mostrar detalhes em um overlay
 // Página com detalhamento completo do campeão (skills, stats, etc)
 
-interface Champion {
-  id: string;
-  name: string;
-  image: {
-    full: string;
-  };
-  title: string;
-  tags: string[];
-}
+// blur, types, info
 
-const SPLASH_URL = "http://ddragon.leagueoflegends.com/cdn/img/champion/splash";
+// controller fighter mage marksman slayer tank specialist
 
 function Champions() {
-  const [champions, setChampions] = useState<Champion[]>([]);
+  const [champions, setChampions] = useState<IChampion[]>([]);
+  const [show, setShow] = useState(false);
+  const [selected, setSelected] = useState<IChampion>();
 
-  const showDetails = (url: string) => {
-    console.log(url);
-    axios.get(url).then((response) => console.log(response));
+  const handleClose = () => setShow(false);
+  const handleShow = (id: string) => {
+    setShow(true);
+    getChampionDetail(id);
+  };
+
+  const showDetails = () => {
+    console.log("ae");
+  };
+
+  const getChampionDetail = (id: string) => {
+    axios
+      .get(
+        `http://ddragon.leagueoflegends.com/cdn/12.13.1/data/pt_BR/champion/${id}.json`
+      )
+      .then((response) => {
+        setSelected(response.data.data[id]);
+      });
   };
 
   useEffect(() => {
@@ -44,27 +63,32 @@ function Champions() {
 
   return (
     <div>
-      <div className="header">
-        <img src="/src/assets/logo.png" alt="" height={50} />
-      </div>
+      <h1 style={{ textAlign: "center", color: "#ffffff" }}>
+        Escolha seu campeão
+      </h1>
       <div className="container">
-        {champions?.map((champion) => (
-          <div
-            key={champion.id}
-            className="champion"
-          >
-            <img
-              src={`${SPLASH_URL}/${champion.id}_0.jpg`}
-              alt=""
-            />
-            <div className="details">
-              <div>
-                <strong>{champion.name}</strong>
-                <span>{champion.title}</span>
-              </div>
-            </div>
-          </div>
-        ))}
+        <div
+          className="d-flex justify-content-center w-100"
+          style={{ border: "1px solid #C28F2C", borderRadius: "8px" }}
+        >
+          <Button>Todos</Button>
+          <Button>Assassinos</Button>
+          <Button>Lutadores</Button>
+          <Button>Magos</Button>
+          <Button>Atiradores</Button>
+          <Button>Suportes</Button>
+          <Button>Tanques</Button>
+        </div>
+        <div className="champion-section">
+          {champions?.map((champion) => (
+            <Link to={champion.id} key={champion.id}>
+              <Champion
+                champion={champion}
+                onSelect={() => handleShow(champion.id)}
+              />
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

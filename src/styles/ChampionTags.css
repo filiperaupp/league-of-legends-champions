@@ -1,0 +1,21 @@
+.bg-atirador {
+    background-color: #484C33 !important;
+}
+.bg-tanque {
+    background-color: #6D7A93 !important;
+}
+.bg-mago {
+    background-color: #3944DB !important;
+}
+.bg-assassino {
+    background-color: #AE1B27 !important;
+}
+.bg-lutador {
+    background-color: #C28F2C !important;
+}
+.bg-suporte {
+    background-color: #2DA7B0 !important;
+}
+.bg-default {
+    background-color: gray !important;
+}
