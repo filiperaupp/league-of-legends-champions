@@ -16,7 +16,7 @@ export function ChampionDetail() {
     if (championId)
       axios
         .get(
-          `http://ddragon.leagueoflegends.com/cdn/12.13.1/data/pt_BR/champion/${championId}.json`
+          `https://ddragon.leagueoflegends.com/cdn/12.13.1/data/pt_BR/champion/${championId}.json`
         )
         .then((response) => {
           const data = response.data.data[championId];

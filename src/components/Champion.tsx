@@ -7,7 +7,7 @@ interface ChampionProps {
 
 export default function Champion({ champion, onSelect }: ChampionProps) {
   const SPLASH_URL =
-    "http://ddragon.leagueoflegends.com/cdn/img/champion/splash";
+    "https://ddragon.leagueoflegends.com/cdn/img/champion/splash";
   return (
     <div onClick={onSelect} key={champion.id} className="champion">
       <img src={`${SPLASH_URL}/${champion.id}_0.jpg`} alt="" />

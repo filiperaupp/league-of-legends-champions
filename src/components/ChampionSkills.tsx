@@ -7,7 +7,7 @@ export default function ChampionSkills(props: any) {
       <div className="col-12 col-md-6 d-flex align-items-start">
         <img
           className="me-2"
-          src={`http://ddragon.leagueoflegends.com/cdn/12.13.1/img/passive/${props.passive.image.full}`}
+          src={`https://ddragon.leagueoflegends.com/cdn/12.13.1/img/passive/${props.passive.image.full}`}
           alt=""
         />
         <div>
@@ -19,7 +19,7 @@ export default function ChampionSkills(props: any) {
         <div key={spell.id} className="col-12 col-md-6 d-flex align-items-start">
           <img
             className="me-2"
-            src={`http://ddragon.leagueoflegends.com/cdn/12.13.1/img/spell/${spell.image.full}`}
+            src={`https://ddragon.leagueoflegends.com/cdn/12.13.1/img/spell/${spell.image.full}`}
             alt=""
           />
           <div>

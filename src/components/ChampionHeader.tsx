@@ -24,7 +24,7 @@ export default function ChampionHeader({ champion }: any) {
         <div className="col-lg-auto col-md-12 d-flex align-items-start">
           {champion?.id && (
             <img
-              src={`http://ddragon.leagueoflegends.com/cdn/12.13.1/img/champion/${champion?.id}.png`}
+              src={`https://ddragon.leagueoflegends.com/cdn/12.13.1/img/champion/${champion?.id}.png`}
               alt=""
               width={90}
               style={{ paddingRight: "8px" }}

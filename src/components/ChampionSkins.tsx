@@ -19,7 +19,7 @@ export default function ChamnpionSkins({ championId, skins }: any) {
         <SectionDivider title="Skins" />
         {selectedImage && (
           <img
-            src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${selectedImage.num}.jpg`}
+            src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${selectedImage.num}.jpg`}
             alt=""
           />
         )}
@@ -29,7 +29,7 @@ export default function ChamnpionSkins({ championId, skins }: any) {
               <img
                 className={`${(skin.id === selectedImage?.id) ? "active" : ""}`}
                 key={skin.id}
-                src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skin.num}.jpg`}
+                src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skin.num}.jpg`}
                 alt=""
                 onClick={() => selectImage(skin.id)}
               />
