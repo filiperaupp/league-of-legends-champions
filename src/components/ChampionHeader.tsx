@@ -10,7 +10,7 @@ interface Champion {
   tags: string[];
 }
 
-export default function ChampionHeader({champion}: any) {
+export default function ChampionHeader({ champion }: any) {
   return (
     <div className="champion-header">
       <div className="container row m-auto">
