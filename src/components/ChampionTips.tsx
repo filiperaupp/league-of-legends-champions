@@ -9,7 +9,7 @@ export default function ChampionTips(props: any) {
           Jogando <strong>com</strong> o campeão
         </h4>
         <ul>
-          {props?.allytips.map((tip, index) => (
+          {props?.allytips.map((tip: string, index: number) => (
             <li key={index}>{tip}</li>
           ))}
         </ul>
@@ -20,7 +20,7 @@ export default function ChampionTips(props: any) {
           Jogando <strong>contra</strong> o campeão
         </h4>
         <ul>
-          {props?.enemytips.map((tip, index) => (
+          {props?.enemytips.map((tip: string, index: number) => (
             <li key={index}>{tip}</li>
           ))}
         </ul>

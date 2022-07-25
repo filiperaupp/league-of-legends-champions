@@ -36,7 +36,7 @@ export default function ChampionHeader({ champion }: any) {
               <strong>{champion?.name}</strong>
             </h5>
             <span className="d-block text-nowrap">{champion?.title}</span>
-            {champion?.tags?.map((tag) => (
+            {champion?.tags?.map((tag: string) => (
               <ChampionTags key={tag} tag={tag} />
             ))}
           </div>

@@ -3,14 +3,14 @@ import SectionDivider from "./SectionDividre";
 import "../styles/ChampionSkins.css";
 
 export default function ChamnpionSkins({ championId, skins }: any) {
-  const [selectedImage, setSelectedImage] = useState();
+  const [selectedImage, setSelectedImage] = useState<Record<string, any>>({});
 
   useEffect(() => {
     if (skins.length) setSelectedImage(skins[0]);
   }, []);
 
   const selectImage = (imageId: number) => {
-    const image = skins.find((skin) => skin.id === imageId);
+    const image = skins.find((skin: Record<string, any>) => skin.id === imageId);
     if (image) setSelectedImage(image);
   };
   return (
@@ -25,7 +25,7 @@ export default function ChamnpionSkins({ championId, skins }: any) {
         )}
         <div className="thumbnails w-100">
           {skins &&
-            skins.map((skin) => (
+            skins.map((skin: Record<string, any>) => (
               <img
                 className={`${(skin.id === selectedImage?.id) ? "active" : ""}`}
                 key={skin.id}

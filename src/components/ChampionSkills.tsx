@@ -15,7 +15,7 @@ export default function ChampionSkills(props: any) {
           <p>{props.passive.description.replace(/(<([^>]+)>)/gi, "")}</p>
         </div>
       </div>
-      {props.spells.map((spell) => (
+      {props.spells.map((spell: Record<string, any>) => (
         <div key={spell.id} className="col-12 col-md-6 d-flex align-items-start">
           <img
             className="me-2"
