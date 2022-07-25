@@ -58,7 +58,7 @@ function Champions() {
     `}
       </style>
       <h1 style={{ textAlign: "center", color: "#111" }}>
-        Escolha seu campeão
+        Escolha seu <strong>Campeão</strong>
       </h1>
       <div className="container">
         <div
